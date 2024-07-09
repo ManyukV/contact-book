@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
+
+.navbar h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #005bfe;
+  margin-bottom: 0px;
+}
+
+.header_wrapper {
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.contacts {
+  background-color: #f6f7f9;
+  height: 93vh;
+}
+
+.contacts__wrapper.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 93vh;
+  text-align: center;
+}
+
+.contacts__wrapper.full {
+  display: block;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.buttons button {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.contacts p {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  text-align: center;
+}
+
+.add_contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_dialog {
+  width: 312px;
+  height: 100%;
+}
+
+.modal_content {
+  background-color: #fff;
+  height: 100%;
+  position: relative;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  border-bottom: 1px solid #00000038;
+}
+
+.modal__close {
+  font-size: 30px;
+  color: #000;
+  opacity: 0.5;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal__header h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+  margin: 0px;
+}
+
+.modal_content form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+.modal_content form input,
+select {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.075);
+  margin-bottom: 30px;
+  padding: 10px 10px;
+  border-radius: 12px;
+}
+
+.modal_content form button {
+  bottom: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.person {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.person__name p {
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 400;
+}
+
+.person__tel {
+  display: flex;
+  align-items: center;
+}
+
+.person__tel p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  padding-right: 20px;
+  margin-bottom: 0px;
+}
+
+.person__tel button {
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid #0000003b;
+}
+
+.person__tel button[data-action="delete"] {
+  background-image: url("../img/deleteDark.png");
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.person__tel button[data-action="delete"]:hover {
+  background-color: #ea3d2f;
+  background-image: url("../img/deleteLight.png");
+  border-color: #ea3d2f;
+}
+
+.person__tel button[data-action="change"] {
+  background-image: url("../img/editDark.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.person__tel button[data-action="change"]:hover {
+  background-color: #005bfe;
+  background-image: url("../img/editLight.png");
+  border-color: #005bfe;
+}
+
+
+.line{
+  display: block;
+  height: 1px;
+  background-color:#00000038;
+  padding: 0px 10px;
+}
