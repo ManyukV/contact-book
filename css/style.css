@@ -1,7 +1,8 @@
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -16,6 +17,16 @@ p {
   line-height: 21.6px;
   color: #005bfe;
   margin-bottom: 0px;
+  padding-top: 1px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  padding-right: 10px;
 }
 
 .header_wrapper {
@@ -45,6 +56,10 @@ p {
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
+}
+
+.buttons button span{
+  padding-left: 5px;
 }
 
 .contacts p {
@@ -131,11 +146,10 @@ select {
   display: block;
 }
 
-.person {
-  background-color: #fff;
+.person__item {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px 30px;
   align-items: center;
 }
 
@@ -159,7 +173,7 @@ select {
 }
 
 .person__tel button {
-  padding: 13px;
+  padding: 20px;
   border-radius: 8px;
   border: 1px solid #0000003b;
 }
@@ -168,7 +182,6 @@ select {
   background-image: url("../img/deleteDark.png");
   background-position: center;
   background-repeat: no-repeat;
-
 }
 
 .person__tel button[data-action="delete"]:hover {
@@ -189,10 +202,192 @@ select {
   border-color: #005bfe;
 }
 
-
-.line{
+.line {
   display: block;
   height: 1px;
-  background-color:#00000038;
+  background-color: #00000038;
   padding: 0px 10px;
+}
+
+.modal_content form button[data-addGroup] {
+  bottom: 20px;
+  position: absolute;
+  right: 131px;
+  color: #005bfe;
+  padding: 6px 9px;
+}
+
+.modal_content form button[data-addGroup]:hover {
+  background-color: rgba(0, 89, 254, 0.226);
+}
+
+.group_input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.group_input .delete-btn {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #0000003b;
+  position: static;
+  background-image: url(../img/deleteDark.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.modal_content form .group_input input {
+  margin-bottom: 0px;
+}
+
+.group_input .delete-btn:hover {
+  background-color: #ea3d2f;
+  background-image: url("../img/deleteLight.png");
+  border-color: #ea3d2f;
+}
+
+.group {
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.group__item {
+  color: #005bfe;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: end;
+}
+
+.group__item button {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.group-contacts {
+  display: none; 
+}
+
+.group.expanded .group-contacts {
+  display: block; 
+}
+
+.person__line {
+  width: 95%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 0px auto;
+}
+
+.add_contact.show {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.add_contact.hide {
+  display: none;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.add_contact.show .modal_content {
+  animation: slideInFromLeft 0.3s ease-out forwards;
+}
+
+.add_contact.hide .modal_content {
+  animation: slideOutToLeft 0.3s ease-out forwards;
+}
+
+.toggle-group img {
+  transition: transform 0.3s;
+}
+
+.toggle-group img.rotated {
+  transform: rotate(180deg);
+}
+
+.group:not(.expanded) .person__line {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .modal__header {
+    padding: 0.5rem 1rem;
+  }
+
+  .modal_content form {
+    padding: 15px;
+  }
+
+  .person__item {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .modal__header h2 {
+    font-size: 16px;
+  }
+
+  .person__name p,
+  .person__tel p {
+    font-size: 16px;
+  }
+
+  .person__tel button {
+    padding: 15px;
+  }
+
+  .group__item {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .person__tel {
+    margin-top: 10px;
+  }
+
+  .modal__header h2,
+  .group__item h3 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal__header h2,
+  .group__item h3 {
+    font-size: 20px;
+  }
+
+  .person__item {
+    padding: 10px;
+  }
+
+  .modal_content form {
+    padding: 10px;
+  }
 }
